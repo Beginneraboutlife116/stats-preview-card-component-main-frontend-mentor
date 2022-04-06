@@ -1,0 +1,184 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: calc(2px + 2ex + 2px);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+a:not([class]) {
+  text-decoration-skip-ink: all;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* Using below when you use framework */
+/* #root, #__next {
+  isolation: isolate;
+} */
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --main-bg-clr: hsl(233, 47%, 7%);
+  --card-bg-clr: hsl(244, 38%, 16%);
+  --accent-clr: hsl(277, 64%, 61%);
+
+  --clr-200: hsla(0, 0%, 100%, 0.6);
+  --clr-300: hsla(0, 0%, 100%, 0.75);
+  --clr-400: hsl(0, 0%, 100%);
+
+  --fz-400: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@700;900&display=swap');
+
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--main-bg-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-400);
+}
+.wrapper {
+  width: min(85%, 64rem);
+  background-color: var(--card-bg-clr);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.image-wrapper {
+  position: relative;
+}
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-clr);
+  mix-blend-mode: multiply;
+}
+.content {
+  padding-block: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+.content__title {
+  font-family: 'Lexend Deca', sans-serif;
+  width: min(80%, 22rem);
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: 900;
+}
+.content__title > span {
+  color: var(--accent-clr);
+}
+.content__description {
+  width: min(80%, 19rem);
+  color: var(--clr-300);
+  font-size: var(--fz-400);
+  line-height: 1.5;
+}
+.content__information-wrapper {
+  width: min(80%, 19rem);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.content__information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.content__information-numbers {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.content__information-title {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.25rem;
+  letter-spacing: 1.5px;
+  color: var(--clr-200);
+}
+
+@media (min-width: 769px) {
+  .wrapper {
+    display: flex;
+  }
+  .image-wrapper {
+    background-color: hsla(277, 64%, 61%, 0.5);
+    order: 1;
+    display: flex;
+  }
+  .image {
+    margin-block: auto;
+  }
+  .content {
+    flex: 0 0 50%;
+    text-align: left;
+    padding-left: clamp(1rem, 2.9vw, 2.5rem);
+    align-items: start;
+    gap: 1.5rem;
+  }
+  .content__title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .content__description {
+    font-size: 0.8rem;
+  }
+  .content__information-wrapper {
+    padding-top: 2.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .content__information-title {
+    letter-spacing: 1px;
+    font-size: 0.1rem;
+  }
+}

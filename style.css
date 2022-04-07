@@ -88,7 +88,11 @@ body {
   overflow: hidden;
 }
 .image-wrapper {
-  background-color: var(--clr-300);
+  width: 100%;
+  aspect-ratio: 1.25;
+  background-image: url(./images/image-header-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 }
 .image-wrapper::after {
@@ -99,7 +103,7 @@ body {
   mix-blend-mode: multiply;
 }
 .content {
-  padding-block: 2.5rem;
+  padding-block: clamp(2.5rem, 12.5%, 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +129,7 @@ body {
 }
 .content__information-wrapper {
   width: min(80%, 19rem);
-  padding-top: 1.5rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -152,16 +156,15 @@ body {
     display: flex;
   }
   .image-wrapper {
+    background-position: center;
     order: 1;
-    display: flex;
-  }
-  .image {
-    margin-block: auto;
   }
   .content {
     flex: 0 0 50%;
     text-align: left;
-    padding-left: clamp(1rem, 2.9vw, 2.5rem);
+    padding-left: clamp(1.5rem, 4.5vw, 4rem);
+    padding-right: 1rem;
+    justify-content: start;
     align-items: start;
     gap: 1.5rem;
   }
@@ -173,7 +176,7 @@ body {
     font-size: 0.8rem;
   }
   .content__information-wrapper {
-    padding-top: 2.5rem;
+    margin-top: auto;
     flex-direction: row;
     justify-content: space-between;
   }

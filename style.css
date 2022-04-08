@@ -74,20 +74,20 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
-body {
+.page {
   background-color: var(--main-bg-clr);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--clr-400);
 }
-.wrapper {
+.page__inner {
   width: min(85%, 64rem);
   background-color: var(--card-bg-clr);
   border-radius: 10px;
   overflow: hidden;
 }
-.image-wrapper {
+.image {
   width: 100%;
   aspect-ratio: 1.25;
   background-image: url(./images/image-header-desktop.jpg);
@@ -95,7 +95,7 @@ body {
   background-size: cover;
   position: relative;
 }
-.image-wrapper::after {
+.image::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -118,16 +118,12 @@ body {
   line-height: 1;
   font-weight: 900;
 }
-.content__title > span {
-  color: var(--accent-clr);
-}
 .content__description {
   width: min(80%, 19rem);
-  color: var(--clr-300);
   font-size: var(--fz-400);
   line-height: 1.5;
 }
-.content__information-wrapper {
+.content__inner {
   width: min(80%, 19rem);
   margin-top: 1.5rem;
   display: flex;
@@ -144,18 +140,31 @@ body {
   font-weight: 700;
   letter-spacing: 1.5px;
 }
-.content__information-title {
-  font-family: 'Lexend Deca', sans-serif;
+.content__information-unit {
   font-size: 0.25rem;
   letter-spacing: 1.5px;
+}
+.text {
+  color: var(--clr-400);
+}
+.text_clr_200 {
   color: var(--clr-200);
+}
+.text_300 {
+  color: var(--clr-300);
+}
+.text_font-family_LexendDeca {
+  font-family: 'Lexend Deca', sans-serif;
+}
+.text_highlight {
+  color: var(--accent-clr);
 }
 
 @media (min-width: 769px) {
-  .wrapper {
+  .page__inner {
     display: flex;
   }
-  .image-wrapper {
+  .image {
     background-position: center;
     order: 1;
   }
@@ -180,7 +189,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
-  .content__information-title {
+  .content__information-unit {
     letter-spacing: 1px;
     font-size: 0.1rem;
   }

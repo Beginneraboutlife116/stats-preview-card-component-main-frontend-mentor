@@ -94,13 +94,8 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-.image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
   background-color: var(--accent-clr);
-  mix-blend-mode: multiply;
+  background-blend-mode: multiply;
 }
 .content {
   padding-block: clamp(2.5rem, 12.5%, 4rem);

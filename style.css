@@ -184,7 +184,7 @@ html, body {
   .content__description {
     font-size: 0.8rem;
   }
-  .content__information-wrapper {
+  .content__inner {
     margin-top: auto;
     flex-direction: row;
     justify-content: space-between;

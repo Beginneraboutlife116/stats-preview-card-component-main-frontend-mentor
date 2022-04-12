@@ -24,7 +24,8 @@ ol[role='list'] {
   list-style: none;
 }
 a:not([class]) {
-  text-decoration-skip-ink: all;
+  -webkit-text-decoration-skip-ink: all;
+          text-decoration-skip-ink: all;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -49,8 +50,10 @@ p, h1, h2, h3, h4, h5, h6 {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }

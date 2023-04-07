@@ -12,40 +12,48 @@
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Stats preview card component</title>
   </head>
-  <body>
-    <header>
-      <picture>
-        <source
-          srcset="./images/image-header-desktop.jpg"
-          media="(min-width: 25rem)"
-        />
-        <source srcset="./images/image-header-mobile.jpg" />
-        <img
-          src="./images/image-header-mobile.jpg"
-          alt="Three people are working and discussing with each other energetically."
-        />
-      </picture>
-    </header>
-    <main>
-      <h1>Get <span>insights</span> that help your business grow.</h1>
-      <p>
-        Discover the benefits of data analytics and make better decisions
-        regarding revenue, customer experience, and overall efficiency.
-      </p>
-      <div>
+  <body class="wrapper">
+    <main class="card">
+      <header class="bg-accent">
+        <picture>
+          <source
+            srcset="./images/image-header-desktop.jpg"
+            media="(min-width: 25rem)"
+          />
+          <source srcset="./images/image-header-mobile.jpg" />
+          <img
+            src="./images/image-header-mobile.jpg"
+            alt="Three people are working and discussing with each other energetically."
+            class="img-blend_accent"
+          />
+        </picture>
+      </header>
+      <section class="content">
         <div>
-          <p>10k+</p>
-          <p>COMPANIES</p>
+          <h1 class="text-strong">
+            Get <span class="text-accent">insights</span> that help your
+            business grow.
+          </h1>
+          <p>
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
         </div>
-        <div>
-          <p>314</p>
-          <p>TEMPLATES</p>
+        <div class="content__list">
+          <div class="content__item">
+            <p class="text-strong text-fz_md">10k+</p>
+            <p>COMPANIES</p>
+          </div>
+          <div class="content__item">
+            <p class="text-strong text-fz_md">314</p>
+            <p>TEMPLATES</p>
+          </div>
+          <div class="content__item">
+            <p class="text-strong text-fz_md">12M+</p>
+            <p>QUERIES</p>
+          </div>
         </div>
-        <div>
-          <p>12M+</p>
-          <p>QUERIES</p>
-        </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

@@ -23,12 +23,6 @@ select {
   font: inherit;
 }
 
-:where(img, picture, video, canvas, svg) {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 ul,
 ol {
   list-style: none;
@@ -87,6 +81,10 @@ body {
 }
 
 /* composition */
+.even-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--size), 100%), 1fr));
+}
 
 /* utility */
 .text-accent {
@@ -117,17 +115,45 @@ body {
   margin-inline: auto;
   overflow: hidden;
 }
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .content {
   display: grid;
   gap: var(--space-500);
   text-align: center;
-  padding: var(--space-500) var(--space-450);
+  padding: var(--padding, var(--space-500)) var(--padding, var(--space-500));
 }
-.content__list {
-  display: grid;
-  gap: var(--space-400);
+.content__item:not(:last-child) {
+  margin-block-end: var(--space-400);
 }
 .content h1 {
   margin-block-end: var(--space-400);
+}
+
+/* exception */
+[data-type="card"] {
+  --size: 15.625rem;
+}
+[data-type="list"] {
+  --size: 10rem;
+}
+
+@media (min-width: 35rem) {
+  .card header {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .content {
+    --padding: var(--space-600);
+
+    text-align: left;
+  }
+
+  [data-type="list"] {
+    --size: 6rem;
+  }
 }

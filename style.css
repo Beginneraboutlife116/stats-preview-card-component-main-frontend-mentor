@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Lexendeca";
+  font-weight: 400;
+  src: url("fonts/lexenddeca-regular-webfont.woff2") format("woff2"),
+    url("fonts/lexenddeca-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("fonts/inter-regular-webfont.woff2") format("woff2"),
+    url("fonts/inter-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  src: url("fonts/inter-bold-webfont.woff2") format("woff2"),
+    url("fonts/inter-bold-webfont.woff") format("woff");
+}
+
 *,
 *::before,
 *::after {
@@ -76,8 +97,10 @@ a:not([class]) {
 body {
   padding: 0;
   font-size: var(--fz-400);
-  color: var(--clr-200);
+  color: var(--clr-300);
   background-color: var(--main-bg-clr);
+  font-weight: 400;
+  font-family: "Lexendeca", sans-serif;
 }
 
 /* composition */
@@ -87,14 +110,24 @@ body {
 }
 
 /* utility */
+.text-inter {
+  font-family: "Inter", sans-serif;
+}
 .text-accent {
   color: var(--accent-clr);
 }
 .text-strong {
   color: var(--clr-400);
+  font-weight: 700;
+}
+.text-lighter {
+  color: var(--clr-200);
 }
 .text-fz_md {
   font-size: calc(1rem * 1.25);
+}
+.text-spread {
+  letter-spacing: 0.1em;
 }
 .bg-accent {
   background-color: var(--accent-clr);
